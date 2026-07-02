@@ -40,13 +40,13 @@ leno23-install ~/Code/leno23 --dry-run
 Install into the current directory:
 
 ```bash
-curl -fsSL https://wyf027.github.io/install | bash
+curl -fsSL https://github.com/wyf027/i/raw/main/i | bash
 ```
 
 Choose a target directory:
 
 ```bash
-curl -fsSL https://wyf027.github.io/install | bash -s ~/Code/leno23
+curl -fsSL https://github.com/wyf027/i/raw/main/i | bash -s ~/Code/leno23
 ```
 
 The script installs the CLI with `cargo install --git`, then runs
@@ -55,7 +55,7 @@ The script installs the CLI with `cargo install --git`, then runs
 If you publish the installer somewhere else, override the source repository:
 
 ```bash
-curl -fsSL https://your-domain.example/install | \
+curl -fsSL https://github.com/you/i/raw/main/i | \
   LENO23_INSTALLER_REPO_URL=https://github.com/you/your-installer \
   bash -s ~/Code/leno23
 ```
