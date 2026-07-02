@@ -1,0 +1,20 @@
+{
+  "name": "leno23-installer",
+  "version": "0.1.0",
+  "description": "Install wyf027/leno23 resources into a target directory.",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./i.sh": "./i.sh",
+    "./install.sh": "./install.sh"
+  },
+  "files": [
+    "index.js",
+    "i.sh",
+    "install.sh",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT"
+}
