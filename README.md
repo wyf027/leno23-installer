@@ -41,13 +41,13 @@ After publishing this Rust project to `wyf027/leno23-installer`, esm.sh can
 serve the one-letter `i` script directly from GitHub:
 
 ```bash
-curl -L raw.esm.sh/gh/wyf027/leno23-installer@0|sh
+curl -L raw.esm.sh/gh/wyf027/leno23-installer@8a45ff1|sh
 ```
 
 That installs into the current directory. To choose a target directory:
 
 ```bash
-curl -L raw.esm.sh/gh/wyf027/leno23-installer@0|sh -s ~/Code/leno23
+curl -L raw.esm.sh/gh/wyf027/leno23-installer@8a45ff1|sh -s ~/Code/leno23
 ```
 
 The script installs the CLI with `cargo install --git`, then runs
@@ -56,7 +56,7 @@ The script installs the CLI with `cargo install --git`, then runs
 If you publish the installer somewhere else, override the source repository:
 
 ```bash
-curl -L raw.esm.sh/gh/you/your-installer@0 | \
+curl -L raw.esm.sh/gh/you/your-installer@COMMIT | \
   LENO23_INSTALLER_REPO_URL=https://github.com/you/your-installer \
   sh -s ~/Code/leno23
 ```
