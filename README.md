@@ -35,19 +35,18 @@ leno23-install ~/Code/leno23 --keep-root
 leno23-install ~/Code/leno23 --dry-run
 ```
 
-## Bun-Style Install Script via esm.sh
+## Bun-Style Install Script
 
-After publishing this Rust project to `wyf027/leno23-installer`, esm.sh can
-serve the one-letter `i` script directly from GitHub:
+Install into the current directory:
 
 ```bash
-curl -L raw.esm.sh/gh/wyf027/leno23-installer@8a45ff1|sh
+curl -fsSL https://wyf027.github.io/install | bash
 ```
 
-That installs into the current directory. To choose a target directory:
+Choose a target directory:
 
 ```bash
-curl -L raw.esm.sh/gh/wyf027/leno23-installer@8a45ff1|sh -s ~/Code/leno23
+curl -fsSL https://wyf027.github.io/install | bash -s ~/Code/leno23
 ```
 
 The script installs the CLI with `cargo install --git`, then runs
@@ -56,9 +55,9 @@ The script installs the CLI with `cargo install --git`, then runs
 If you publish the installer somewhere else, override the source repository:
 
 ```bash
-curl -L raw.esm.sh/gh/you/your-installer@COMMIT | \
+curl -fsSL https://your-domain.example/install | \
   LENO23_INSTALLER_REPO_URL=https://github.com/you/your-installer \
-  sh -s ~/Code/leno23
+  bash -s ~/Code/leno23
 ```
 
 ## Build
