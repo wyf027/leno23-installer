@@ -3,14 +3,13 @@
   "version": "0.1.0",
   "description": "Install wyf027/leno23 resources into a target directory.",
   "type": "module",
-  "main": "./index.js",
+  "main": "./install.sh",
   "exports": {
-    ".": "./index.js",
+    ".": "./install.sh",
     "./i.sh": "./i.sh",
     "./install.sh": "./install.sh"
   },
   "files": [
-    "index.js",
     "i.sh",
     "install.sh",
     "README.md",
