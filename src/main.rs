@@ -13,7 +13,7 @@ use indicatif::{ProgressBar, ProgressStyle};
 use reqwest::blocking::Client;
 use tar::EntryType;
 
-const DEFAULT_REPO: &str = "wyf027/leno23";
+const DEFAULT_REPO: &str = "wyf027/wyf027";
 const DEFAULT_REF: &str = "HEAD";
 const USER_AGENT: &str = concat!(env!("CARGO_PKG_NAME"), "/", env!("CARGO_PKG_VERSION"));
 
@@ -21,8 +21,8 @@ const USER_AGENT: &str = concat!(env!("CARGO_PKG_NAME"), "/", env!("CARGO_PKG_VE
 #[command(
     name = "leno23-install",
     version,
-    about = "Download wyf027/leno23 resources into a target directory.",
-    after_help = "Examples:\n  leno23-install ~/Code/leno23\n  leno23-install ./leno23 --ref main --force\n  leno23-install ./snapshot --repo wyf027/leno23 --keep-root"
+    about = "Download wyf027/wyf027 resources into a target directory.",
+    after_help = "Examples:\n  leno23-install ~/Code/wyf027\n  leno23-install ./wyf027 --ref main --force\n  leno23-install ./snapshot --repo wyf027/wyf027 --keep-root"
 )]
 struct Cli {
     /// Directory where the repository contents should be installed.
@@ -41,7 +41,7 @@ struct Cli {
     #[arg(long)]
     force: bool,
 
-    /// Keep GitHub's archive root folder, for example leno23-HEAD/.
+    /// Keep GitHub's archive root folder, for example wyf027-HEAD/.
     #[arg(long)]
     keep_root: bool,
 
@@ -437,7 +437,7 @@ mod tests {
 
     #[test]
     fn strips_github_archive_root_by_default() {
-        let path = Path::new("leno23-HEAD/sites/web3-interview-docs/index.html");
+        let path = Path::new("wyf027-HEAD/sites/web3-interview-docs/index.html");
         let target = archive_entry_target(path, false).unwrap().unwrap();
 
         assert_eq!(
@@ -448,22 +448,22 @@ mod tests {
 
     #[test]
     fn can_keep_github_archive_root() {
-        let path = Path::new("leno23-HEAD/README.md");
+        let path = Path::new("wyf027-HEAD/README.md");
         let target = archive_entry_target(path, true).unwrap().unwrap();
 
-        assert_eq!(target, PathBuf::from("leno23-HEAD/README.md"));
+        assert_eq!(target, PathBuf::from("wyf027-HEAD/README.md"));
     }
 
     #[test]
     fn skips_archive_root_directory_when_stripping() {
-        let path = Path::new("leno23-HEAD");
+        let path = Path::new("wyf027-HEAD");
 
         assert_eq!(archive_entry_target(path, false).unwrap(), None);
     }
 
     #[test]
     fn rejects_parent_directory_paths() {
-        let path = Path::new("leno23-HEAD/../escape");
+        let path = Path::new("wyf027-HEAD/../escape");
 
         assert!(archive_entry_target(path, false).is_err());
     }
@@ -484,13 +484,13 @@ mod tests {
 
     #[test]
     fn parses_owner_and_repo() {
-        let repo: Repo = "wyf027/leno23".parse().unwrap();
+        let repo: Repo = "wyf027/wyf027".parse().unwrap();
 
         assert_eq!(
             repo,
             Repo {
                 owner: "wyf027".to_string(),
-                name: "leno23".to_string(),
+                name: "wyf027".to_string(),
             }
         );
     }

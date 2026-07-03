@@ -1,15 +1,19 @@
 {
-  "name": "leno23-installer",
+  "name": "wyf-skills",
   "version": "0.1.0",
-  "description": "Install wyf027/leno23 resources into a target directory.",
+  "description": "Install wyf027/wyf027 resources into a target directory.",
   "type": "module",
   "main": "./index.js",
+  "bin": {
+    "wyf-skills": "i"
+  },
   "exports": {
     ".": "./index.js",
     "./i.sh": "./i.sh",
     "./install.sh": "./install.sh"
   },
   "files": [
+    "i",
     "index.js",
     "i.sh",
     "install.sh",

@@ -2,7 +2,7 @@
 name = "leno23-installer"
 version = "0.1.0"
 edition = "2024"
-description = "Install wyf027/leno23 resources into a target directory."
+description = "Install wyf027/wyf027 resources into a target directory."
 license = "MIT"
 
 [[bin]]
